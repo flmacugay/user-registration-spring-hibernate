@@ -33,7 +33,6 @@ public class RegistrationServiceImpl implements RegistrationService {
     @Transactional
     public void removeUser(int userId) {
         userDAO.removeUser(userId);
-
     }
 
     @Transactional

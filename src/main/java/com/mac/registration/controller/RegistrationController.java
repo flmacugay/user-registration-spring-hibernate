@@ -13,7 +13,6 @@ import com.mac.registration.entity.User;
 import com.mac.registration.service.RegistrationService;
 
 @Controller
-@RequestMapping(value = "/register")
 public class RegistrationController {
 
     @Autowired
@@ -35,14 +34,21 @@ public class RegistrationController {
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
     public String addUser(@ModelAttribute("user") User user) {
-        userService.addUser(user);
+
+        if (user.getId() > 0) {
+            userService.updateUser(user);
+        } else {
+            userService.addUser(user);
+        }
+
         return "redirect:/users";
     }
 
     @RequestMapping(value = "/edit/{id}")
-    public String editUser(@PathVariable("id") int id, @ModelAttribute("user") User user) {
-        userService.updateUser(user);
-        return "redirect:/users";
+    public String editUser(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", userService.getUser(id));
+        model.addAttribute("listUsers", userService.listUsers());
+        return "user";
     }
 
     @RequestMapping(value = "/remove/{id}")
