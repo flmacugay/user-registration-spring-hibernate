@@ -50,7 +50,7 @@
                 </beans:prop>
                 <beans:prop key="hibernate.show_sql">true</beans:prop>
                 <beans:prop key="hibernate.format_sql">true</beans:prop>
-                <beans:prop key="hibernate.hbm2ddl.auto">create</beans:prop>
+                <beans:prop key="hibernate.hbm2ddl.auto">create-update</beans:prop>
                 <beans:prop key="hibernate.enable_lazy_load_no_trans">true</beans:prop>
                 
                 
@@ -75,6 +75,5 @@
     <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
     </beans:bean>
-
 
 </beans:beans>
