@@ -11,41 +11,37 @@ import com.mac.registration.entity.User;
 
 @Service
 @Qualifier("RegistrationService")
+@Transactional
 public class RegistrationServiceImpl implements RegistrationService {
 
-    private UserDAO userDAO;
+	private UserDAO userDAO;
 
-    @Transactional
-    public User getUser(int userId) {
-        return userDAO.getUser(userId);
-    }
+	public User getUser(int userId) {
+		return userDAO.getUser(userId);
+	}
 
-    @Transactional
-    public void addUser(User user) {
-        userDAO.addUser(user);
-    }
+	public void addUser(User user) {
+		userDAO.addUser(user);
+	}
 
-    @Transactional
-    public void updateUser(User user) {
-        userDAO.updateUser(user);
-    }
+	public void updateUser(User user) {
+		userDAO.updateUser(user);
+	}
 
-    @Transactional
-    public void removeUser(int userId) {
-        userDAO.removeUser(userId);
-    }
+	public void removeUser(int userId) {
+		userDAO.removeUser(userId);
+	}
 
-    @Transactional
-    public List<User> listUsers() {
-        return userDAO.listUsers();
-    }
+	public List<User> listUsers() {
+		return userDAO.listUsers();
+	}
 
-    public UserDAO getUserDAO() {
-        return userDAO;
-    }
+	public UserDAO getUserDAO() {
+		return userDAO;
+	}
 
-    public void setUserDAO(UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
+	public void setUserDAO(UserDAO userDAO) {
+		this.userDAO = userDAO;
+	}
 
 }

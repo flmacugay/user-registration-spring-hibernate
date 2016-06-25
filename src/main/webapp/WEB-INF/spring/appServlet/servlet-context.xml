@@ -13,6 +13,7 @@
     <!-- Enables the Spring MVC @Controller programming model -->
     <annotation-driven />
     
+    <context:component-scan base-package="com.mac.registration.controller"/>
 
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving 
         up static resources in the ${webappRoot}/resources directory -->
@@ -39,11 +40,7 @@
     <beans:bean id="hibernateSessionFactory"
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <beans:property name="dataSource" ref="dataSource" />
-        <beans:property name="annotatedClasses">
-            <beans:list>
-                <beans:value>com.mac.registration.entity.User</beans:value>
-            </beans:list>
-        </beans:property>
+        <beans:property name="packagesToScan" value="com.mac.registration.entity"/>
         <beans:property name="hibernateProperties">
             <beans:props>
                 <beans:prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect
@@ -53,10 +50,8 @@
                 <beans:prop key="hibernate.hbm2ddl.auto">create-update</beans:prop>
                 <beans:prop key="hibernate.enable_lazy_load_no_trans">true</beans:prop>
                 
-                
                 <beans:prop key="hibernate.default_schema">REGISTRATION</beans:prop>
                 
-
             </beans:props>
         </beans:property>
     </beans:bean>
@@ -68,7 +63,6 @@
     <beans:bean id="userService" class="com.mac.registration.service.RegistrationServiceImpl">
         <beans:property name="userDAO" ref="userDAO"></beans:property>
     </beans:bean>
-    <context:component-scan base-package="com.mac.registration" />
     
     <tx:annotation-driven transaction-manager="transactionManager"/>
     
