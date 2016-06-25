@@ -43,8 +43,7 @@
         <beans:property name="packagesToScan" value="com.mac.registration.entity"/>
         <beans:property name="hibernateProperties">
             <beans:props>
-                <beans:prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect
-                </beans:prop>
+                <beans:prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</beans:prop>
                 <beans:prop key="hibernate.show_sql">true</beans:prop>
                 <beans:prop key="hibernate.format_sql">true</beans:prop>
                 <beans:prop key="hibernate.hbm2ddl.auto">create-update</beans:prop>
@@ -56,18 +55,22 @@
         </beans:property>
     </beans:bean>
     
+    <!-- 
     <beans:bean id="userDAO" class="com.mac.registration.dao.UserDAOImpl">
         <beans:property name="sessionFactory" ref="hibernateSessionFactory" />
     </beans:bean>
+     
     
     <beans:bean id="userService" class="com.mac.registration.service.RegistrationServiceImpl">
         <beans:property name="userDAO" ref="userDAO"></beans:property>
     </beans:bean>
+    
     
     <tx:annotation-driven transaction-manager="transactionManager"/>
     
     <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <beans:property name="sessionFactory" ref="hibernateSessionFactory" />
     </beans:bean>
+    -->
 
 </beans:beans>
