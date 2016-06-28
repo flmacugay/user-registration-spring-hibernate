@@ -84,7 +84,7 @@
                     <div class="intro-text">
                         <span class="name">Im@gine Java</span>
                         <hr class="star-light">
-                        <span class="skills">Java Developer - Web Developer - Musician</span>
+                        <span class="skills">Java Developer - Web Developer - Freelancer</span>
                     </div>
                 </div>
             </div>
@@ -176,14 +176,14 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Imagine Java is website created on open source Java technologies. The UI is a free bootstrap theme created by Start Bootstrap. The back-end is developed using Java, Spring MVC and Hibernate JPA. Deployed in Openshift by RedHat with gears JBoss AS, MySQL and Jenkins.</p>
+                    <p>Imagine Java is built on open source Java technologies, everything you see here is free. The UI is a free bootstrap theme created by Start Bootstrap. Under the hood are Java, Spring MVC and Hibernate. Deployed in Openshift by RedHat with gears JBoss AS, MySQL and Jenkins.</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>If you are looking to own a website built on the technologies mentioned then you are in the right place!</p>
+                    <p>Whether you are looking to own a website or wanted to learn Java then you are in the right place! I can help you setup, develop and maintain your very own website. Contact me for details.</p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Download Theme
+                        <i class="fa fa-download"></i> View Source Code
                     </a>
                 </div>
             </div>
@@ -203,7 +203,10 @@
                 <div class="col-lg-8 col-lg-offset-2">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                     <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    
+                    <c:url var="homeAction" value="/home" />
+                    
+                    <form:form name="sentMessage" id="contactForm" novalidate="true" action="${homeAction}" method="post">
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Name</label>
@@ -239,7 +242,7 @@
                                 <button type="submit" class="btn btn-success btn-lg">Send</button>
                             </div>
                         </div>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>

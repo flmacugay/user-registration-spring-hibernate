@@ -20,8 +20,9 @@ $(function() {
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+            
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: location.href.substr(0,location.href.lastIndexOf("/")) +"/resources/mail/contact_me.php",
                 type: "POST",
                 data: {
                     name: name,
