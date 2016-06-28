@@ -176,7 +176,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Imagine Java is built on open source Java technologies, everything you see here is free. The UI is a free bootstrap theme created by Start Bootstrap. Under the hood are Java, Spring MVC and Hibernate. Deployed in Openshift by RedHat with gears JBoss AS, MySQL and Jenkins.</p>
+                    <p>Imagine Java is build free using open source Java technologies. The UI is a free bootstrap theme created by Start Bootstrap. Under the hood are Java, Spring MVC and Hibernate. Deployed in Openshift by RedHat with gears JBoss AS, MySQL and Jenkins.</p>
                 </div>
                 <div class="col-lg-4">
                     <p>Whether you are looking to own a website or wanted to learn Java then you are in the right place! I can help you setup, develop and maintain your very own website. Contact me for details.</p>
